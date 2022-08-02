@@ -30,6 +30,7 @@ const SignUpForm = () => {
 
   const handleChange = (event) => {
     setSignUpData({
+      // below you select the signUpData and update only fields that are changing with the ... notation
       ...signUpData,
       [event.target.name]: event.target.value,
     });
