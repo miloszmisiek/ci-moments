@@ -6,6 +6,7 @@ import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
+import PostPage from "./pages/posts/PostPage";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          {/* The colon means that id is a parameter  that can be passed through the url.  
+              // In this case, it will be the id of our  post. So any time we set a link to /post/  
+              // and then add a post id React will know to  render the Post page for the specified post. */}
+          <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
