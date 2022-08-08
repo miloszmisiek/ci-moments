@@ -15,6 +15,7 @@ import Comment from "../comments/Comment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import Asset from "../../components/Asset";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
     // accessing id from Router Library Route path
@@ -54,7 +55,7 @@ function PostPage() {
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles for mobile</p>
+                <PopularProfiles mobile />
                 {/* spreading post object from API call in useEffect and passing setPost function as a prop (for state manipulation) */}
                 {/* postPage passed without a value = returned as true inside the Page component */}
                 <Post {...post.results[0]} setPosts={setPost} postPage />
@@ -93,7 +94,7 @@ function PostPage() {
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                Popular profiles for desktop
+                <PopularProfiles />
             </Col>
         </Row>
     );
